@@ -1,20 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
 
-@font-face {
-	font-family: 'Helvetica Neue';
-	src: local('Helvetica Neue') url('./fonts/HelveticaNeue.ttf')
-		format('truetype');
-	font-weight: normal;
-	font-style: normal;
-}
-@font-face {
-	font-family: 'Helvetica Neue';
-	src: local('Helvetica Neue') url('./fonts/HelveticaNeueBold.ttf')
-		format('trutype');
-	font-weight: bold;
-	font-style: normal;
-}
-
 /* Box sizing rules */
 *,
 *::before,
@@ -99,21 +84,20 @@ select {
 
 :root {
 	--transparent: rgba(0, 0, 0, 0);
-	--white: rgba(255, 255, 255, 1);
+	--white: 255, 255, 255;
 	--blue-100: 58, 121, 189;
-	--blue-200: rgba(221, 237, 255, 1);
+	--blue-200: 221, 237, 255;
 	--blue-300: 58, 121, 189;
-	--gray-100: rgba(238, 235, 244, 1);
-	--gray-200: rgba(0, 0, 0, 0.45);
-	--gray-300: rgba(89, 90, 90, 1);
-	--gray-400: rgba(79, 80, 80, 1);
+	--gray-100: 238, 235, 244;
+	--gray-300: 89, 90, 90;
+	--gray-400: 79, 80, 80;
 }
 
 body {
 	font-family: 'Helvetica Neue', 'HelveticaNeue', Helvetica, sans-serif;
 	font-weight: normal;
-	background-color: var(--white);
-	color: var(--gray-400);
+	background-color: rgb(var(--white));
+	color: rgb(var(--gray-400));
 }
 
 .background-svg {
@@ -127,10 +111,10 @@ body {
 }
 
 /* Utility classes */
-.h-4 {
+.h-1 {
 	height: 1rem;
 }
 
-.h-16 {
+.h-4875 {
 	height: 4.875rem;
 }

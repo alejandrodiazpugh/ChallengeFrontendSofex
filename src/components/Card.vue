@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 
-// idealmente TCard heredaría el tipado de TUsers con Pick<TUsers, 'name' | 'email' | 'phone' | 'address'>, pero Vue no permite que los props sean tipos importados
+// Declaro el tipo aqui, porque Vue tiene problema usando tipos importados para definir props
 type TCard = {
     profile: string,
     background: string,
@@ -15,7 +15,8 @@ type TCard = {
     }
 }
 
-const props = defineProps<TCard>()
+const props = defineProps<TCard>() //Para asegurar que la informacion que entra es la correcta
+
 const address = `${props.address.street}, ${props.address.suite}, ${props.address.city}, ${props.address.zipcode}`
 const profilePicture = `/images/${props.profile}`
 const backgroundImg = `/images/${props.background}`
@@ -80,7 +81,7 @@ const backgroundImg = `/images/${props.background}`
         font-weight: bold;
         padding-inline: 1.125rem;
         padding-block-end: 15px;
-        color: var(--white);
+        color: rgb(var(--white));
         z-index: 100;
         
     }
@@ -88,7 +89,7 @@ const backgroundImg = `/images/${props.background}`
         width: 100%;
         position: absolute;
         object-position: 0 -3rem;
-        background-color: var(--blue-300);
+        background-color: rgb(var(--blue-300));
         transition: var(--transition);
     }
     .profile-image {

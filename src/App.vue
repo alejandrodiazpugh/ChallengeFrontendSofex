@@ -1,12 +1,13 @@
 <script setup lang="ts">
 import CardContainer from './components/CardContainer.vue';
 import Layout from './components/Layout.vue';
+import Loading from './components/Loading.vue';
 
 </script>
 
 <template>
   <Layout>
-    <div class="h-4"></div>
+    <div class="h-1"></div> <!-- Para evitar modificar de mas el margin y padding. Usualmente seguiria la convencion de tailwind para esto, pero como solamente lo utilice dos veces lo dejo asi  -->
     <div class="title">
       <h1>Usuarios</h1>
       <div class="toggle-icons">
@@ -14,12 +15,13 @@ import Layout from './components/Layout.vue';
         <div class="grid-view"></div>
       </div>
     </div>
-    <div class="h-16"></div>
+    <div class="h-4875"></div>
+    <!-- El Suspense API es experimental, pero funciona en esta version para el fetch de los datos -->
     <Suspense>
       <CardContainer />
   
       <template #fallback>
-        Loading...
+        <Loading />
       </template>
     </Suspense>
   </Layout>
@@ -29,7 +31,7 @@ import Layout from './components/Layout.vue';
 <style scoped> 
 
 .title {
-  color: var(--gray-300);
+  color: rgb(var(--gray-300));
   width: 100%;
   padding-inline: 40px;
   font-family: 'Poppins', sans-serif;
@@ -70,7 +72,7 @@ import Layout from './components/Layout.vue';
 }
 
 .selected {
-  background-color: var(--blue-200);
+  background-color: rgb(var(--blue-200));
   border-radius: 11px;
   outline: solid 1px rgb(var(--blue-300));
   width: 100%;

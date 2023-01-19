@@ -61,8 +61,8 @@ main {
     align-items: center;
     justify-content: space-between;
     z-index: 7000;
-    border-bottom: 1px solid var(--gray-100);
-    background-color: var(--white);
+    border-bottom: 1px solid rgb(var(--gray-100));
+    background-color: rgb(var(--white));
     padding-inline: 3.125rem;
 }
 
@@ -77,13 +77,14 @@ main {
     height: 100vh;
     width: var(--side-nav-width);
     z-index: 9999;
-    padding-block: 3.375rem;
+    padding-block-start: 2.1rem;
+    padding-block-end: 3.375rem;
     left: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid var(--gray-100);
-    background-color: var(--white);
+    border: 1px solid rgb(var(--gray-100));
+    background-color: rgb(var(--white));
 }
 
 .side-nav__links {
@@ -102,7 +103,8 @@ main {
 }
 
 .side-nav__logout {
-    margin-block-start: 20rem;
+    position: absolute;
+    bottom: 5rem;
 }
 
 .content {
