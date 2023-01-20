@@ -4,7 +4,7 @@ import fetchData from '../helpers/fetchData';
 import Card from './Card.vue';
 
 const url = 'https://jsonplaceholder.typicode.com/users'; // Para propositos de la prueba pongo el URL aqui
-const data: TData[] = await fetchData(url);
+const data: TData[] | null = await fetchData(url);
 
 // mapear imagenes a cada usuario - idealmente la data ya vendria con la referencia a la imagen para cada usuario.
 const images = [
@@ -23,7 +23,7 @@ const images = [
 ];
 const backgroundImgs = ['cover1.jpg', 'cover2.jpg','cover3.jpg','cover4.jpg','cover5.jpg','cover6.jpg','cover7.jpg','cover8.jpg','cover9.jpg','cover10.jpg', ]
 
-data.forEach((user, index) => {
+data?.forEach((user, index) => {
     user.profile = images[index]
     user.background = backgroundImgs[index]
 })
@@ -43,6 +43,9 @@ data.forEach((user, index) => {
 			:address="user.address"
 		/>
 	</section>
+    <section v-if="!data" class="error-msg">
+        <h2>Ocurrió un error, intente más tarde.</h2>
+    </section>
 </template>
 
 <style scoped>
@@ -54,5 +57,14 @@ data.forEach((user, index) => {
 	align-items: center;
 	justify-content: center;
     padding-block-end: 2rem;
+}
+
+.error-msg {
+    width: 100%;
+    margin: auto;
+}
+
+.error-msg h2 {
+    text-align: center;
 }
 </style>

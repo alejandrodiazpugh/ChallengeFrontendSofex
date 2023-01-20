@@ -1,4 +1,5 @@
 <script setup lang="ts">
+
 // Crear array para iconos y nombres del nav
 const sideNavIcons = [
     { name: 'dashboard', url: '/images/layout.svg', active: false },

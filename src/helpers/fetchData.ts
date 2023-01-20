@@ -14,6 +14,7 @@ export default async function fetchData(url: string) {
 		return await res.json();
 	} catch(err) {
 		console.error(`Error while fetching data: ${err}`)
+		return null;
 	}
 
 
